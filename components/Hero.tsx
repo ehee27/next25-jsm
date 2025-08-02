@@ -1,10 +1,14 @@
 import React from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { cn } from "@/lib/utils";
+import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import MagicButton from "./ui/MagicButton";
+import { HiArrowRightCircle } from "react-icons/hi2";
+import { FaLocationArrow } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <div className="pb-20 pt-36">
+    <div className="pb-20 pt-36 text-white">
       <div>
         <Spotlight
           className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
@@ -19,14 +23,14 @@ const Hero = () => {
       {/* --------- Content Div ---------- */}
       <div className="absolute top-0 left-0 flex h-screen w-full items-center justify-center dark:bg-black bg-black dark:bg-grid-white/[0.03] bg-grid-white/[0.2]">
         {/* ---------- Grid overlay ------------- */}
-        <div
+        {/* <div
           className={cn(
             "absolute inset-0",
             "[background-size:40px_40px]",
             "[background-image:linear-gradient(to_right,#e4e4e7_1px,transparent_1px),linear-gradient(to_bottom,#e4e4e7_1px,transparent_1px)]",
             "dark:[background-image:linear-gradient(to_right,#262626_1px,transparent_1px),linear-gradient(to_bottom,#262626_1px,transparent_1px)]"
           )}
-        />
+        /> */}
         {/* -------- Radial gradient for container faded look -------- */}
         <div className="absolute inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black pointer-events-none text-white"></div>
         {/* ---------------------- */}
@@ -37,6 +41,20 @@ const Hero = () => {
           <h2 className="uppercase tracking-widest text-xs text-center text-green-300 max-w-80">
             Dynamic Web Magic with Next.js
           </h2>
+          <TextGenerateEffect
+            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+            words="Transforming Concepts into Seamless User Experiences"
+          />
+          <p className="text-center tracking-wider md-4 text-sm md:text-lg">
+            Hi, I&apos;m Scott, a Next.js Developer based in Kansas
+          </p>
+          <a href="#about">
+            <MagicButton
+              title="Show my work"
+              icon={<HiArrowRightCircle />}
+              position="right"
+            />
+          </a>
         </div>
       </div>
     </div>
